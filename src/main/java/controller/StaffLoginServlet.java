@@ -16,7 +16,7 @@ import dao.DBConnection;
 
 @WebServlet("/StaffLoginServlet")
 public class StaffLoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -36,7 +36,7 @@ public class StaffLoginServlet extends HttpServlet {
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {
-				// Login successful
+				
 				HttpSession session = request.getSession();
 				session.setAttribute("staff_id", rs.getString("staff_id"));
 				session.setAttribute("staff_name", rs.getString("staff_name"));
